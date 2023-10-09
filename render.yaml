@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: superset
+    env: docker
+    plan: starter
+    numInstances: 1
+    healthCheckPath: /login/
+    envVars:
+      - key: SUPERSET_SECRET_KEY
+        value: your_secret_key_here
+      - key: PORT
+        value: 8080
